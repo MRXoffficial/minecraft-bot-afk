@@ -115,7 +115,7 @@ android.api = 33
 android.minapi = 24
 
 # (int) Android SDK version to use
-android.sdk = 20
+#android.sdk = 20
 
 # (str) Android NDK version to use
 android.ndk = 
