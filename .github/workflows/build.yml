@@ -28,6 +28,10 @@ jobs:
             libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
             libffi-dev libssl-dev
 
+      - name: Ensure Android SDK Build-Tools (Aidl) are installed
+        run: |
+          echo "y" | sudo /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=/usr/local/lib/android/sdk "build-tools;33.0.2" "platforms;android-33"
+
       - name: Install Buildozer and Cython
         run: |
           pip install --upgrade pip
