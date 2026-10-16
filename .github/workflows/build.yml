@@ -33,9 +33,11 @@ jobs:
           pip install --upgrade pip
           pip install --user cython==3.0.11 buildozer
 
+      - name: Clean buildozer cache to prevent NDK errors
+        run: rm -rf .buildozer/android/platform/android-ndk*
+
       - name: Build with Buildozer
-        run: |
-          buildozer -v android debug
+        run: buildozer -v android debug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
